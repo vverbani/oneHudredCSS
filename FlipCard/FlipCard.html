@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en-us">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>CSS Flip Card</title>
+		<meta name="description" content="CSS Flip Card">
+		<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+		<!-- Icon library -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			body{
+
+				background: #F8F8F8;;
+			}
+			.container{
+				position: relative;
+				width: 260px;
+				height: 300px;
+				align-items: center;
+			}
+			.card{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				transform-style: preserve-3d;
+				transition: all 0.7s ease;
+				border-radius: 20px;
+			}
+			.card:hover{
+				transform: rotateY(180deg);
+			}
+			.frontOfCard{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				backface-visibility: hidden;
+				color: #333;
+				border-radius: 10px;
+			}
+			.backOfCard{
+				position: absolute;
+				width: 100%;
+				height: 105%;
+				backface-visibility: hidden;
+				color: #333;
+				transform: rotateY(180deg);
+				border-radius: 10px;
+			}
+			.imgDimensions{
+				width: 260px;
+				height: 160px;
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+			}
+			.frontTitle{
+				margin: 4px 0 0 10px;
+			}
+			.frontDescription{
+				margin: 10px 10px 7px 10px;
+			}
+			.titleBottomSpacing{
+				padding-bottom: 10px;
+			}
+			.star{
+				color: #FFCC66;
+			}
+			.rightFloater{
+				float: right;
+				margin: -35px 90px 0 0;
+				color: grey;
+			}
+			.uppercaseText{
+				text-transform: uppercase;
+			}
+			.buttonPadding{
+				text-align: center;
+			}
+			.primaryButton{
+				padding: 8px 60px 8px 60px;
+				text-align: center;
+				background-image: linear-gradient(to right, #FFCC66, orange);
+				border-radius: 10px;
+				text-decoration: none;
+				font-weight: bold;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class= "container">
+			<div class= "card">
+				<div class= "frontOfCard">
+					<img class= "imgDimensions" src= "bmwm4.jpg" alt= "A red 2018 M4 BMW driving on a highway." />
+					<h3 class= "frontTitle uppercaseText">2018 BMW M4</h3>
+					<p class= "frontDescription">A high-performance athlete for the road and the racetrack, for perfect drifts, high-speed bends and the long straights in between.</p>
+				</div>	
+				<div class="backOfCard">
+					<h3 class= "frontTitle uppercaseText titleBottomSpacing">At a glance</h3>
+					<div>
+						<span class="fa fa-star star"></span>
+						<span class="fa fa-star star"></span>
+						<span class="fa fa-star star"></span>
+						<span class="fa fa-star star"></span>
+						<span class="fa fa-star"></span>
+					</div>	
+					<div class= "rightFloater">
+						<p>39 reviews</p>
+					</div>
+					<div>
+						<ul>
+							<li>The 425-hp twin-turbo inline-six engine makes short drives of any distance. </li>
+							<li>With 406 lb-ft of torque, paired with a 6-speed manual or seven-speed dual clutch transmission, you're gauranteed to be impressed.</li>
+							<li>Equally comfortable and efficient to drive to and from the racetrack, as well on it.</li>
+						</ul>
+					</div>
+					<div class= "priceTitle">
+						<h3></h3>
+					</div>
+					<div class= "buttonPadding">
+						<a class= "uppercaseText primaryButton" href= "">Learn more</a>
+					</div>
+				</div>			
+			</div>
+		</div>
+		
+	</body>
+</html>
