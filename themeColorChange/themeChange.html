@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en-us">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>CSS Flip Card</title>
+		<meta name="description" content="CSS Flip Card">
+		<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+		<!-- Icon library -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<!-- JQuery Library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- CSS Start-->
+		<style>
+		/* The switch - the box around the slider */
+		.switch {
+		  position: relative;
+		  display: inline-block;
+		  width: 56px;
+		  height: 28px;
+		}
+
+		/* Hide default HTML checkbox */
+		.switch input {
+		  opacity: 0;
+		  width: 0;
+		  height: 0;
+		}
+
+		/* The slider */
+		.slider {
+		  position: absolute;
+		  cursor: pointer;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  bottom: 0;
+		  -webkit-transition: .4s;
+		  transition: .4s;
+		  border: 2px solid black;
+		  border-color: #262323;
+		}
+
+		.slider:before {
+		  position: absolute;
+		  content: "";
+		  height: 20px;
+		  width: 20px;
+		  left: 4px;
+		  bottom: 2px;
+		  background-color: #262323;
+		  -webkit-transition: .4s;
+		  transition: .4s;
+		}
+		.slider:after{
+			color:white;
+		}
+		input:checked + .slider {
+		  background-color: #262323;
+		  color:white;
+		  border-style: solid;
+		  border-color: white;
+		}
+		input:focus + .slider {
+		}
+		input:checked + .slider:before {
+		  -webkit-transform: translateX(26px);
+		  -ms-transform: translateX(26px);
+		  transform: translateX(26px);
+		}
+
+		/* Rounded sliders */
+		.slider.round {
+		  border-radius: 34px;
+		}
+		.slider.round:before {
+		  border-radius: 50%;
+		}
+		.right-float{
+			float: right;
+			padding-right: 15px;
+			padding-top: 15px
+		}
+		.center-block {
+		  display: block;
+		  margin-left: auto;
+		  margin-right: auto;
+		}
+		.top-padding{
+			padding-top: 75px;
+		}
+		.dark-theme{
+			background-color: #262323;
+			color: white;
+			transition: 0.6s;
+			height: 100vh;
+		}
+		.center-title{
+			text-align: center;
+		}
+		</style>
+	</head>
+	<body>
+		<!-- HTML Start-->
+		<div id="theme">
+
+			<!-- Rounded switch -->
+			<div class="right-float">
+				<label class="switch">
+				  <input type="checkbox">
+				  <span class="slider round"></span>
+				</label>
+			</div>
+
+			<!-- Centered column text-->
+			<div class="row top-padding">
+				<div class="col-md-6 center-block column-card">
+					<h1 class="center-title">Best title</h1>
+					<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- JS Start-->
+		<script>
+			var darkTheme= "0";
+			$('.slider').click(function() {
+				if(darkTheme==0){
+					darkTheme=1;
+					$('#theme').addClass("dark-theme");
+				}else{
+					darkTheme=0;
+					$('#theme').removeClass("dark-theme");
+				}
+			})
+		</script>
+	</body>
+</html>
