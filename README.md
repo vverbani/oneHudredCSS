@@ -1,5 +1,8 @@
 ##100 CSS Components
 
+[2018-12-30 : #1]
+	-blog card
+
 [2018-12-29 : #2]
 	-Changing background theme
 	-Arrowed breadcrumb navigation
